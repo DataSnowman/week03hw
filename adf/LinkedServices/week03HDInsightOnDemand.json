@@ -1,0 +1,25 @@
+{
+    "name": "week03HDInsightOnDemand",
+    "properties": {
+        "description": "",
+        "hubName": "tweets_hub",
+        "type": "HDInsightOnDemand",
+        "typeProperties": {
+            "version": "3.6",
+            "clusterSize": 2,
+            "timeToLive": "00:05:00",
+            "osType": "Linux",
+            "coreConfiguration": {},
+            "hBaseConfiguration": {},
+            "hdfsConfiguration": {},
+            "hiveConfiguration": {},
+            "mapReduceConfiguration": {},
+            "oozieConfiguration": {},
+            "sparkConfiguration": {},
+            "stormConfiguration": {},
+            "yarnConfiguration": {},
+            "additionalLinkedServiceNames": [],
+            "linkedServiceName": "week03tweetsStorage"
+        }
+    }
+}

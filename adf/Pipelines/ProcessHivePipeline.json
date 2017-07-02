@@ -1,0 +1,41 @@
+{
+    "name": "ProcessHivePipeline",
+    "properties": {
+        "description": "Process Tweets",
+        "activities": [
+            {
+                "type": "HDInsightHive",
+                "typeProperties": {
+                    "scriptPath": "data/hivescripts/processtweets.hql",
+                    "scriptLinkedService": "week03tweetsStorage"
+                },
+                "inputs": [
+                    {
+                        "name": "Input"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "Output"
+                    }
+                ],
+                "policy": {
+                    "timeout": "01:00:00",
+                    "concurrency": 1,
+                    "retry": 3
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "name": "ProcessHivePipline",
+                "linkedServiceName": "week03HDInsightOnDemand"
+            }
+        ],
+        "start": "2017-06-30T00:00:00Z",
+        "end": "2017-07-01T00:00:00Z",
+        "isPaused": false,
+        "hubName": "tweets_hub",
+        "pipelineMode": "Scheduled"
+    }
+}

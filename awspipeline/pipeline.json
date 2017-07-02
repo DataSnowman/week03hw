@@ -1,0 +1,51 @@
+{
+  "objects": [
+    {
+      "failureAndRerunMode": "CASCADE",
+      "resourceRole": "DataPipelineDefaultResourceRole",
+      "role": "DataPipelineDefaultRole",
+      "pipelineLogUri": "s3://uwclddata2017/emrlogs/",
+      "scheduleType": "ONDEMAND",
+      "name": "Default",
+      "id": "Default"
+    },
+    {
+      "directoryPath": "s3://uwclddata2017/output/twitter/fifa/",
+      "name": "OUTPUT",
+      "id": "S3DataNodeId_KJMgm",
+      "type": "S3DataNode"
+    },
+    {
+      "filePath": "s3://uwclddata2017/input/twitter/fifa/tweets.txt",
+      "name": "INPUT",
+      "id": "S3DataNodeId_XOSK5",
+      "type": "S3DataNode"
+    },
+    {
+      "name": "TweetEmrCluster1",
+      "coreInstanceType": "m1.medium",
+      "coreInstanceCount": "2",
+      "amiVersion": "3.11.0",
+      "id": "EmrClusterId_7pZR9",
+      "type": "EmrCluster",
+      "terminateAfter": "1 Hour"
+    },
+    {
+      "output": {
+        "ref": "S3DataNodeId_KJMgm"
+      },
+      "input": {
+        "ref": "S3DataNodeId_XOSK5"
+      },
+      "scriptUri": "s3://uwclddata2017/hivescripts/processtweets.hql",
+      "stage": "false",
+      "name": "ProcessTweets",
+      "runsOn": {
+        "ref": "EmrClusterId_7pZR9"
+      },
+      "id": "HiveActivityId_JtQas",
+      "type": "HiveActivity"
+    }
+  ],
+  "parameters": []
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Output",
+    "properties": {
+        "published": false,
+        "type": "AzureBlob",
+        "linkedServiceName": "week03tweetsStorage",
+        "typeProperties": {
+            "folderPath": "data/output/tweets/fifa/"
+        },
+        "availability": {
+            "frequency": "Day",
+            "interval": 1
+        }
+    }
+}

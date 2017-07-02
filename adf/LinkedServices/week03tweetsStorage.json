@@ -1,0 +1,11 @@
+{
+    "name": "week03tweetsStorage",
+    "properties": {
+        "description": "",
+        "hubName": "tweets_hub",
+        "type": "AzureStorage",
+        "typeProperties": {
+            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
+        }
+    }
+}
