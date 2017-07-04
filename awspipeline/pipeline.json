@@ -10,13 +10,13 @@
       "id": "Default"
     },
     {
-      "directoryPath": "s3://uwclddata2017/output/twitter/fifa/",
+      "directoryPath": "s3://uwclddata2017/output/twitter/fifa2/",
       "name": "OUTPUT",
       "id": "S3DataNodeId_KJMgm",
       "type": "S3DataNode"
     },
     {
-      "filePath": "s3://uwclddata2017/input/twitter/fifa/tweets.txt",
+      "directoryPath": "s3://uwclddata2017/input/twitter/fifa2/",
       "name": "INPUT",
       "id": "S3DataNodeId_XOSK5",
       "type": "S3DataNode"
